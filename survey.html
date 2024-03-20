@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="home.html" rel="home" type="text/html" />
+  <link href="survey.html" rel="survey" type="text/html" />
+  <link href="LOF.html" rel = "LOF" type="text/html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <h1>Random Forest Model to Predict LOF or GOF</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="home.html">About</a></li>
+        <li><a href="survey.html" class="active">Survey</a></li>
+    </ul>
+</nav>
+
+<form action="index.php" method="post">
+
+<!--Real Person-->
+<section class="RP">
+    <br>
+    <fieldset>
+    <!--Multiple Choice-->
+    <legend>1. Does the following data refer to an existing person?</legend> <br>
+    <input type="radio" id="yes" name="person" value="1">
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="person" value="0">
+    <label for="no">No</label>
+    </fieldset>
+</section>
+
+    <!--Mutation Type-->
+
+<section class="MT">
+    <br>
+    <fieldset>
+    <legend>2.Mutation Type:</legend>
+    <!--Text and radio-->
+    <br>
+    <span><div class="term"><input type="radio" id="MS" name="type" value="Missense">
+        <label for="MS">Missense</label></div>
+        <div class="definition">A change in the DNA code resulting in an amino acid substitution in the protein.</div></span>
+    
+    <span><div class="term"><input type="radio" id="NS" name="type" value="Nonsense">
+        <label for="NS">Nonsense</label></div>
+    <div class="definition">Single change in DNA code producing a stop codon and premature termination of protein synthesis.</div></span>
+    
+    <span><div class="term"><input type="radio" id="FS" name="type" value="Frameshift">
+        <label for="FS">Frameshift</label></div>
+        <div class="definition">Addition or deletion of nucleotide(s) resulting in a change to a gene's reading frame and premature termination of protein synthesis.</div></span>
+    
+    <span><div class="term"><input type="radio" id="indel" name="type" value="Indel">
+        <label for="indel">Indel</label></div>
+        <div class="definition">A mutation named with the blend of insertion and deletion.</div></span>
+    
+    <span><div class="term"><input type="radio" id="deletion" name="type" value="Deletion">
+        <label for="deletion">Deletion</label></div>
+        <div class="definition">The loss of one or more nucleotides from a segment of DNA.</div></span>
+    
+    <span><div class="term"><input type="radio" id="duplication" name="type" value="Duplication">
+        <label for="duplication">Duplication</label></div>
+        <div class="definition">Complete duplication or deletion of intron or large portion of gene.</div></span>    
+    </fieldset>
+</section>  
+
+<section class="mutationCode">
+    <br>
+    <fieldset>
+        <!-- name for textbox is the same as radio buttons, which is why it isn't working for php (i think)-->
+        <legend>3. Mutation Code (optional):</legend>
+        <span>
+            <div class="term">
+                <input type="text" id="other" name="code" placeholder="ex. c.669G>C (no spaces)">
+            </div>
+        </span>
+    </fieldset>
+</section>
+
+
+<!--Intellectual and Developmental Disability-->
+<section class="V1_SEVEREIDD">
+    <br>
+    <fieldset>
+    <!--Multiple Choice-->
+    <!--Variable: V1_SEVEREIDD (binary)-->
+    <legend>4. Intellectual and Developmental Disability:</legend> <br>
+    <div class="term">
+    <input type="radio" id="mild" name="V1_SEVEREIDD" value="0">
+    <label for="mild">Mild</label></div>
+    <div class="definition">Mild IDD is characterized by IQ between 50 and 70 and having achieved almost all developmental milestones within a few months of the appropriate age.</div>
+
+    <div class="term">
+    <input type="radio" id="moderate" name="V1_SEVEREIDD" value="0">
+    <label for="moderate">Moderate</label></div>
+    <div class="definition">Moderate IDD is characterized by IQ between 35 and 50 and have achieved between 50% and 75% of developmental milestones at the appropriate age.</div>
+    
+    <div class="term">
+    <input type="radio" id="severe" name="V1_SEVEREIDD" value="1">
+    <label for="severe">Severe</label></div>
+    <div class="definition">Severe IDD is characterized by IQ less than 34, noticeable motor impairment and extremely limited development (i.e. achieving less than half of their developmental milestones at the appropriate age.)</div>
+    
+    <div class="term">
+    <input type="radio" id="neurotypical" name="V1_SEVEREIDD" value="0">
+    <label for="neurotypical">Neurotypical</label></div>
+    <div class="definition">Patients are neurotypical if they have experienced age appropriate development across all milestones and have no intellectual impairment.</div>
+    
+    <div class="term">
+    <input type="radio" id="unknown" name="V1_SEVEREIDD" value="0">
+    <label for="unknown">Unknown</label></div>
+    </fieldset>
+</section>
+
+<!--Developed Seizure-->
+<section class="DS">
+    <br>
+    <fieldset>
+    <!--Multiple Choice-->
+    <!--Variable: dev_sez (binary)-->
+    <legend>5. Does the patient have a history of seizures?</legend> <br>
+    <input type="radio" id="yes" name="dev_sz" value="1">
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="dev_sz" value="0">
+    <label for="no">No</label>
+    </fieldset>
+</section>
+
+<!--Age of onset-->
+<section class="onset_age">
+    <br>
+    <fieldset>
+    <!--Text-->
+    <legend>6. Age of onset for seizures (months)?</legend> <br>
+    <input type="text" id="months" name="onset_age">
+    </fieldset>
+</section>
+
+<!--Seizure Types-->
+<section class="ST">
+    <br>
+    <fieldset>
+    <legend>7. Seizure Type:</legend> 
+    <br>
+    <!--Multiple Choice-->
+    <div class="term">
+    <input type="checkbox" id="t-c" name="ST[]" value="GTC">
+    <label for="t-c">Tonic-Clonic</label></div>
+    <div class="definition">Two phase seizure that starts with a rapid stiffening of muscles, followed by rpid, rhythmic jerking. Patient may cry out, lose consciousness, fall to the ground or have muscle jerks or spasms. These seizures typically last 1 to 3 minutes and often result in the patient losing consciousness. Also referred to as grand mal seizures.</div>
+
+    <div class="term">
+    <input type="checkbox" id="focal" name="ST[]" value="FOC">
+    <label for="focal">Focal</label></div>
+    <div class="definition">Focal seizures are located in one area of the brain, causing twitching, temporary confusion or daze, or changes in taste or smell. Focal seizures include simple, complex, secondarily generalized, or gelastic (laughing) and dacrystic (crying) seizures.</div>
+
+    <div class="term">
+    <input type="checkbox" id="tonic" name="ST[]" value="TON">
+    <label for="tonic">Tonic</label> </div>
+    <div class="definition">Muscles in the patients body become stiff or tense. These seizures usually last less than 20 seconds and may result in falling if the patient is standing. </div>
+
+    <div class="term">
+    <input type="checkbox" id="myoclonic" name="ST[]" value="MYO">
+    <label for="myoclonic">Myoclonic</label></div>
+    <div class="definition">Short jerking spasms in parts of the body. These jerking motions may be localized to the neck, shoulders, and upper arms.</div>
+
+    <div class="term">
+    <input type="checkbox" id="atonic" name="ST[]" value="ATO">
+    <label for="atonic">Atonic</label></div>
+    <div class="definition">Parts or all of the body become limp. If standing, the patient falls to the ground. These seizures may also be called drop seizures.</div>
+
+    <div class="term">
+    <input type="checkbox" id="clonic" name="ST[]" value="CLO">
+    <label for="clonic">Clonic</label></div>
+    <div class="definition">Regular and sustained jerking movements lasting a few seconds to a minute. </div>
+
+    <div class="term">
+    <input type="checkbox" id="hemiclonic" name="ST[]" value="HC">
+    <label for="hemiclonic">Hemiclonic</label></div>
+    <div class="definition">Sustained rapid jerking or shaking of parts of one side of the body.</div>
+
+    <div class="term">
+    <input type="checkbox" id="epilepticSpasms" name="ST[]" value="ES">
+    <label for="epilepticSpasms">Epileptic Spasms</label></div>
+    <div class="definition">Brief flexion or extension of body parts that occur in clusters every 5-10 seconds over a 5-10 minute period.</div>
+
+    <div class="term">
+    <input type="checkbox" id="absence" name="ST[]" value="ABS">
+    <label for="absence">Absence</label></div>
+    <div class="definition">Rapid blinking or staring spells that suddenly occur in the patient. Also referred to as petit mal seizures.</div>
+    
+    <div class="term">
+    <input type="checkbox" id="atypicalAbsence" name="ST[]" value="A-ABS">
+    <label for="atypicalAbsence">Atypical absence</label></div>
+    <div class="definition">Staring spell lasting longer than 20 seconds. This seizure type is not typically preceded by rapid breathing. Other presentations include rapid blinking, chewing movements, lip smacking or jerking movements of lips.</div>
+    
+    <div class="term">
+    <input type="checkbox" id="focalNonmotorUnaware" name="ST[]" value="FNMNA">
+    <label for="focalNonmotorUnaware">Focal Nonmotor Unaware</label></div>
+    <div class="definition">Seizures may not include any physical effect on muscles, but are changes in mood, sensations or thinking. Patients may retain awareness and ability to interact or may lose awareness during these seizures.</div>
+    
+    <div class="term">
+    <input type="checkbox" id="febrile" name="ST[]" value="FEB">
+    <label for="febrile">Febrile</label></div>
+    <div class="definition">Seizures induced by fever or increased body temperature due to exercise or exposure to heat. These seizures can either be full body convulsions or single body parts moving independently of others.</div>
+    
+<!--
+    <div class="term">
+    <input type="checkbox" id="statusEpilepticus" name="ST" value="SE">
+    <label for="statusEpilepticus">Status Epilepticus</label></div>
+    <div class="definition"></div>
+    
+    <div class="term">
+    <input type="checkbox" id ="infantileSpasms" name = "ST" value="IS">
+    <label for="infantileSpasms">Infantile Spasms</label></div>
+    <div class="definition"></div> 
+-->
+
+    </fieldset>
+</section>
+    <br>
+    <button type="submit" id="submit">Submit</button>
+
+</form>
+
+<script src="filter.js"></script>
+ 
+</body>
+</html>
+
+
+

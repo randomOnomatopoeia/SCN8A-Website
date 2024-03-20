@@ -1,0 +1,140 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right:0%;
+  }
+
+header {
+    font-family: 'Cinzel', serif;
+    color: #2F4F4F;
+    background-color: lightgray;
+    text-align: center;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size:1.75vw;
+  }
+
+body{
+    background-color:lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+    font-family: 'Jost', 'serif';
+    padding: 1vw;
+    margin: 1vw;
+}
+
+/* navigation bar*/
+nav {
+    font-family: 'Jost', serif; 
+    
+  }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    opacity: 0.5;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+
+li {
+    display: inline-block;
+    padding: auto;
+}
+
+li a {
+    text-decoration: none;
+    color: #000000;
+    display: block; 
+    text-align:center;
+    padding: 10px 14px; 
+    opacity: 100%;
+    
+}
+
+li a:hover:not(.active) {
+    background-color: slategray;
+
+}
+
+.active {
+    background-color: darkslategrey;
+    color:aliceblue;
+}  
+
+/* form formatting */
+form { 
+    color:rgb(47, 47, 47); 
+    font-family:'Jost', serif;
+    font-weight: 4px; 
+    padding: 5px 10px;
+}
+
+input[type=checkbox] {
+    display: inline-block;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+}
+
+span{
+    white-space: nowrap;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px 10px;
+    margin-bottom: 5px;
+    background-color: slategray;
+    color: white; 
+    font-size: 16px;
+    
+}
+
+button:hover {
+    background-color: gray;
+    color: black;
+}
+
+legend {
+    float: left;
+}
+
+/* hover definitions*/
+.definition {
+    display: none;
+    font-size: x-small;
+  }
+  
+.term:hover + .definition {
+    display: block;
+    border: 1px solid black;
+    background-origin: border;
+    background-color: lightgrey;
+    padding: 2px 3px;
+    margin: 1px;
+    width: fit-content;
+  }
+
+.explanation {
+    margin: 5px;
+    padding:1%;
+    font-family:'Jost', serif;
+    color:rgb(47, 47, 47); 
+}
+
+.likelihood {
+    margin: 5px;
+    padding:1%;
+    font-family:'Jost', serif;
+    color:rgb(47, 47, 47); 
+}

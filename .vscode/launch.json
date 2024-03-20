@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "type": "R-Debugger",
+            "name": "Debug R-File",
+            "request": "launch",
+            "debugMode": "file",
+            "workingDirectory": "",
+            "file": ""
+        },
+        {
+            "type": "R-Debugger",
+            "name": "Launch R-Workspace",
+            "request": "launch",
+            "debugMode": "workspace",
+            "workingDirectory": ""
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:81/project_scn8a",
+        },
+        {
+            "name": "Launch built-in server",
+            "type": "php",
+            "request": "launch",
+            "runtimeArgs": [
+                "-S",
+                "localhost:81/project_scn8a",
+                "-t",
+                "."
+            ],
+            "port": 81,
+            "serverReadyAction": {
+                "action": "openExternally"
+            }
+        },
+    ],
+}
