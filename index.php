@@ -22,7 +22,7 @@
   "c.4423G>A","c.4447G>A","c.4850G>A","c.5280G>C","c.5280G>A","c.5280G>T","c.5302A>G","c.5614C>T","c.5614C>G","c.5615G>T","c.5630A>G"];
 
   
-  // real data?
+  // real data from an actual person?
   $real = isset($_POST["person"]) ? $_POST["person"]: '';
 
   // find value for mutation type
@@ -66,10 +66,10 @@
 // creates $loss and $gain 
 $loss = (float) substr($output,130,10); 
 $gain = 1-$loss;
-echo $loss;
+//echo $loss;
   
 
-
+/*
   // insert data into database
   if ($real == 1) {
     //Establishes the connection
@@ -82,7 +82,7 @@ echo $loss;
       mysqli_stmt_close($stmt);
     }
   } 
-  
+*/
 
 
 
@@ -97,23 +97,19 @@ echo $loss;
   
   for ($i = 0; $i < count($GOF); $i++) {
     if ($code == ($GOF[$i])) {
-      echo $gain;
-      echo $i;
-      //header("Location: GOF.php?gain=1.0");
+      header("Location: GOF.php?gain=1.0");
     }
   }
 
-  if ($type != 'Missense') {
+  if ($loss > .50) {
     header('Location: LOF.php?LOF=' . $loss);
-  } else if ($loss > .50) {
-    header('Location: LOF.php?LOF=' . $loss);
+  } else if ($type != 'Missense' && $gain > .50){
+    header("Location: nonMissense.php?GOF=" . $gain);
   } else if ($gain > .50){
-    echo $gain; 
-    echo $loss;
-    //header("Location: GOF.php?GOF=" . $gain);
-  } else {
-    header('Location = nonMissense.php');
-  }
+    header("Location: GOF.php?GOF=" . $gain);
+  } else  if ($type != 'Missense') {
+    header('Location: LOF.php?LOF=1.0');
+  } 
   
   // checks for absence or febrile and returns 0 or 1 for convulsive_sz()
   //convulsive: anything not ABS, FEB, or A-ABS

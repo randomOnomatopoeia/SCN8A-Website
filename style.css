@@ -7,8 +7,8 @@ html {
 
 header {
     font-family: 'Cinzel', serif;
-    color: #2F4F4F;
-    background-color: lightgray;
+    color: #000121;
+    background-color: #fafaf2;
     text-align: center;
     padding-top:5px;
     padding-bottom:5px;
@@ -16,7 +16,7 @@ header {
   }
 
 body{
-    background-color:lightgray;
+    background-color:#fafaf2;
     margin: 0;
     padding: 0;
 }
@@ -30,7 +30,6 @@ body{
 /* navigation bar*/
 nav {
     font-family: 'Jost', serif; 
-    
   }
 
 ul {
@@ -38,7 +37,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: gray;
+    color:rgb(199, 199, 199);
+    background-color: rgb(0, 0, 0);
     opacity: 0.5;
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -52,7 +52,7 @@ li {
 
 li a {
     text-decoration: none;
-    color: #000000;
+    color: #acacac;
     display: block; 
     text-align:center;
     padding: 10px 14px; 
@@ -61,20 +61,20 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: slategray;
-
+    color: #ffffff;
 }
 
 .active {
-    background-color: darkslategrey;
-    color:aliceblue;
+    color:rgb(199, 199, 199);
 }  
+
+/*end navigation*/
 
 /* form formatting */
 form { 
-    color:rgb(47, 47, 47); 
+    color:#000000; 
     font-family:'Jost', serif;
-    font-weight: 4px; 
+    font-weight: bold; 
     padding: 5px 10px;
 }
 
@@ -112,14 +112,14 @@ legend {
 /* hover definitions*/
 .definition {
     display: none;
-    font-size: x-small;
+    font-size: small;
   }
   
 .term:hover + .definition {
     display: block;
     border: 1px solid black;
     background-origin: border;
-    background-color: lightgrey;
+    background-color: #fffff5;
     padding: 2px 3px;
     margin: 1px;
     width: fit-content;
@@ -129,7 +129,7 @@ legend {
     margin: 5px;
     padding:1%;
     font-family:'Jost', serif;
-    color:rgb(47, 47, 47); 
+    color:rgb(0, 0, 0); 
 }
 
 .likelihood {

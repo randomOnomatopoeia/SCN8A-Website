@@ -20,8 +20,8 @@
 </header>
 <nav>
     <ul>
-        <li><a href="home.html">About</a></li>
-        <li><a href="survey.html">Survey</a></li>
+        <li><a href="home.html"><b>About</b></a></li>
+        <li><a href="survey.html"><b>Survey</b></a></li>
     </ul>
 </nav>
 
@@ -29,7 +29,7 @@
     <section class="explanation">
         <h3>Non-Missense with Gain of Function Characteristics</h3>
         <p>Your patient has a non-missense variant that is
-            predicted to be gain of function. These variants are frequently insertions or deletions (indels) of
+            predicted to be gain of function (GOF: <?php $GOF = $_GET['GOF']; echo $GOF;?>). These variants are frequently insertions or deletions (indels) of
             nucleotides that does not cause a frameshift (i.e. indels of 3/6/9/etc nucleotides). While the patient's
             variant is non-missense, which typically results in the loss of function in the Na
             <sub>v</sub>1.6 sodium channel, the
